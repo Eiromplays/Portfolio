@@ -121,7 +121,6 @@ $(function () {
 
         ExpandProjects(id, $(this));
     });
-
 });
 
 function ExpandProjects(name, expandProjectBtn) {
