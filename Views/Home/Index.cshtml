@@ -2,7 +2,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 <div class="typing-text-wrapper">
     <div class="static-txt">I ❤</div>
     <ul class="dynamic-txts">
@@ -13,66 +12,141 @@
     </ul>
 </div>
 
+<center>
+    <h1>About Me:</h1>
+    <p>I am a programmer and I ❤ code.</p>
+</center>
+
+<div class="gap"></div>
+
+<!-- Skills Start -->
+<h1 class="text-center">My Skills:</h1>
+<center>
+    <div class="skills-wrapper">
+        <div class="card csharp">
+            <div class="circle">
+                <div class="bar"></div>
+                <div class="box"><span></span></div>
+            </div>
+            <div class="text">C#</div>
+        </div>
+        <div class="card aspnet">
+            <div class="circle">
+                <div class="bar"></div>
+                <div class="box"><span></span></div>
+            </div>
+            <div class="text">ASP.NET</div>
+        </div>
+        <div class="card unity">
+            <div class="circle">
+                <div class="bar"></div>
+                <div class="box"><span></span></div>
+            </div>
+            <div class="text">Unity</div>
+        </div>
+    </div>
+</center>
+<!-- Skills End -->
+<!-- School Projects Start -->
+<div class="gap"></div>
+
+<h1 class="text-center">School Projects:</h1>
+
+<div class="projects-wrapper">
+    <div class="center-line">
+        <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+    </div>
+    <div class="row row-1">
+        <section>
+            <i class="icon fas fa-home"></i>
+            <div class="details">
+                <span class="title">Knustad og Holen</span>
+                <span>---</span>
+            </div>
+            <p>Knutsad og Holen</p>
+            <div class="bottom">
+                <a href="http://eirik.imkatta.no/Kh/">Check it out</a>
+                <i>- School Project</i>
+            </div>
+        </section>
+    </div>
+    <div class="row row-2">
+        <section>
+            <i class="icon fas fa-star"></i>
+            <div class="details">
+                <span class="title">Digital Kampanje</span>
+                <span>Tuesday, 22. December 2020</span>
+            </div>
+            <p>Digital Kampanje</p>
+            <div class="bottom">
+                <a href="http://eirik.imkatta.no/Kampanje/">Check it out</a>
+                <i>- School Project</i>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- School Projects End -->
+<div class="gap"></div>
 <!-- GitHub Section Start -->
 <section class="text-center">
     <h1>GitHub Stats:</h1>
 
-    <div class="github-container">
-        <div id="eiromplays-user-info-card" class="user-info-card"></div>
-        <div id="Frozensoft-Games-user-info-card" class="user-info-card"></div>
-    </div>
+    <div class="github-container"></div>
 </section>
 <!-- GitHub Section End -->
 
-<h1 class="text-center">My Skills:</h1>
-<skills class="skills section">
-    <div class="section-inner shadow-sm rounded">
-        <h2 class="heading">Skills</h2>
-        <div class="content">
-            <p class="intro">
-                My skills:
-            </p>
+<!-- Other Projects Start -->
+<div class="gap"></div>
 
-            <div class="skillset">
+<h1 class="text-center">Other Projects:</h1>
 
-                <div class="item">
-                    <h3 class="level-title">C#</h3>
-                    <div class="level-bar">
-                        <div class="level-bar-inner" data-level="50%" style="width: 50%;">
-                        </div>
-                    </div><!--//level-bar-->
-                </div><!--//item-->
-
-                <div class="item">
-                    <h3 class="level-title">ASP.NET</h3>
-                    <div class="level-bar">
-                        <div class="level-bar-inner" data-level="50%" style="width: 50%;">
-                        </div>
-                    </div><!--//level-bar-->
-                </div><!--//item-->
-
-                <div class="item">
-                    <h3 class="level-title">Unity</h3>
-                    <div class="level-bar">
-                        <div class="level-bar-inner" data-level="50%" style="width: 50%;">
-                        </div>
-                    </div><!--//level-bar-->
-                </div><!--//item-->
-
-                <div class="item">
-                    <h3 class="level-title">HTML5, CSS3, CSS &amp; JS</h3>
-                    <div class="level-bar">
-                        <div class="level-bar-inner" data-level="60%" style="width: 60%;">
-                        </div>
-                    </div><!--//level-bar-->
-                </div><!--//item-->
+<div class="projects-wrapper">
+    <div class="center-line">
+        <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+    </div>
+    <div class="row row-1">
+        <section>
+            <i class="icon fas fa-check"></i>
+            <div class="details">
+                <span class="title">Frozensoft Games</span>
+                <span>Sunday, 18. November 2018</span>
             </div>
-        </div><!--//content-->
-    </div><!--//section-inner-->
-</skills>
+            <p>My Game Development Studio</p>
+            <div class="bottom">
+                <a href="https://frozensoftgames.com">Checkout it out</a>
+                <i>- Personal Project</i>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Other Projects End -->
+<div class="gap"></div>
 
 @section Scripts
 {
-    <script>LoadGitHubUsers(["eiromplays", "Frozensoft-Games"]);</script>
+    <script>LoadGitHubUsers(["Eiromplays"]);</script>
     <script src="js/Skillbar.js"></script>
+    <script>
+        let options = {
+            startAngle: -1.55,
+            size: 150,
+            value: 0.85,
+            fill: { gradient: ['#E5383B', '#A4161A', '#BA181B'] }
+        }
+        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+            function (event, progress, stepValue) {
+                $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+            });
+        $(".csharp .bar").circleProgress({
+            value: 0.50
+        });
+        $(".unity .bar").circleProgress({
+            value: 0.50
+        });
+        $(".aspnet .bar").circleProgress({
+            value: 0.50
+        });
+    </script>
 }

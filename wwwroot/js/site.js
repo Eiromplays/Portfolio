@@ -6,16 +6,22 @@
 
 function LoadGitHubUsers(users) {
     users.forEach(user => {
-        LoadGitHubUser(user, document.getElementById(`${user}-user-info-card`));
+        LoadGitHubUser(user, ".github-container");
     });
 }
 
-function LoadGitHubUser(user, cardInfo) {
-    if (cardInfo === null || cardInfo === undefined)
+function LoadGitHubUser(user, container) {
+    const githubContainer = document.querySelector(container);
+    if (githubContainer === null || githubContainer === undefined)
         return;
 
-    const xhrRequest = new XMLHttpRequest();
+    const githubProject = document.createElement("div");
+    githubProject.id = `${user}-user-info-card`;
+    githubProject.className += "user-info-card";
 
+    githubContainer.appendChild(githubProject);
+
+    const xhrRequest = new XMLHttpRequest();
     // Use provided data to grab user info from GitHub API
     xhrRequest.open("GET", `https://api.github.com/users/${user}`);
     xhrRequest.onreadystatechange = function() {
@@ -30,7 +36,7 @@ function LoadGitHubUser(user, cardInfo) {
                     `<h5>Company: <a target="_blank" href='https://github.com/${companyName}'>${companyName}</a></h5>`;
             } else company = "";
 
-            cardInfo.innerHTML = `
+            githubProject.innerHTML = `
             <div class="github-card-avatar">
                 <img src='${response.avatar_url}' class="rounded-circle" alt="${response.name}'s GitHub Avatar"/>
             </div>
@@ -62,10 +68,29 @@ function LoadGitHubUser(user, cardInfo) {
             <div id="${user}-github-projects" style="display: none;"></div>`;
 
             LoadGitHubProjects(user);
+            LoadGitHubOrgs(user);
         }
     }
     xhrRequest.send();
 };
+
+function LoadGitHubOrgs(user) {
+    const xhrRequest = new XMLHttpRequest();
+
+    // Use provided data to grab user info from GitHub API
+    xhrRequest.open("GET", `https://api.github.com/users/${user}/orgs`);
+    xhrRequest.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            const response = JSON.parse(this.response);
+
+            response.forEach(org => {
+                // Display the response data from the GitHub API
+                LoadGitHubUser(org.login, ".github-container");
+            });
+        }
+    }
+    xhrRequest.send();
+}
 
 function LoadGitHubProjects(user) {
     const gameCard = document.getElementById(`${user}-github-projects`);
