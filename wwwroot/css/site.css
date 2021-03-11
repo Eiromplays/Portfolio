@@ -1,4 +1,15 @@
-﻿/* Predefined values */
+﻿/*
+    1. Predefined values
+    2. Nav, Btn and a Styling
+    3. Sticky footer styles
+    4. Sections
+    5. Skills Section
+    6. GitHub Section
+    7. Typing Text
+*/
+
+
+/* 1. Predefined values */
 
 :root {
     --background-color: #161A1D;
@@ -11,6 +22,8 @@
 
 /* Predefined values End */
 
+/* 2. Nav, Btn and a Styling Start */
+
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -21,7 +34,6 @@ a.navbar-brand {
     background-color: #161A1D !important;
 }
 
-/* Provide sufficient contrast against white background */
 a {
     color: var(--primary-red);
 }
@@ -52,8 +64,9 @@ a:hover {
     color: var(--text-color) !important;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
+/* Nav, Btn and a Styling End */
+
+/* 3. Sticky footer styles */
 html {
     font-size: 14px;
 }
@@ -62,6 +75,11 @@ html {
     html {
         font-size: 16px;
     }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
 }
 
 .border-top {
@@ -82,19 +100,11 @@ button.accept-policy {
     line-height: inherit;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
     background-color: var(--background-color);
     color: var(--text-color);
-
 }
 
 .footer {
@@ -105,9 +115,9 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
-/* Skill Bar */
+/* Sticky footer styles End */
 
-/* ======= Sections======= */
+/* 4. Sections Start */
 .sections-wrapper {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -136,11 +146,14 @@ body {
     top: 5px;
 }
 
+/* Sections End */
+
+/* 5. Skills Section Start */
+
 skills {
     display: block;
 }
 
-/* Skills Section */
 .skills .intro {
     margin-bottom: 30px;
 }
@@ -156,15 +169,6 @@ skills {
     margin-bottom: 10px;
 }
 
-.skills .skillset .level-title .level-label {
-    color: var(--text-color);
-    font-size: 16px;
-    font-weight: 400;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
 .skills .skillset .level-bar {
     height: 30px;
     background: var(--text-color);
@@ -175,29 +179,15 @@ skills {
     background: var(--primary-red);
 }
 
-.skill-icon {
-    margin-top: 31px;
-    margin-right: 5px;
-}
+/* Skill Bar End */
 
-.expert-text span {
-    font-size: 20px;
-    color: var(--background-color);
-}
-
-.skill-icon-color i {
-    font-size: 20px;
-    color: var(--primary-dark-red);
-}
-
-/* End Skill Bar */
-
-/* GitHub Section */
+/* 6. GitHub Section Start */
 
 .github-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .user-info-card {
@@ -230,7 +220,35 @@ skills {
     justify-content: space-between;
 }
 
-/* Typing Text */
+.github-read-more-icon {
+    color: var(--primary-red);
+}
+
+.github-card-avatar img {
+    height: 300px;
+}
+
+/* GitHub Section Responsive Start */
+@media only screen and (max-width: 600px) {
+    .user-info-card {
+        width: 300px;
+        background: var(--secondary-background-color);
+        border-radius: 2px;
+        display: inline-block;
+        margin: 1rem;
+        box-shadow: 0 10px 20px #000000, 0 6px 6px #000000;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .github-card-avatar img {
+        height: 250px;
+    }
+}
+/* GitHub Section Responsive End */
+
+/* GitHub Section End */
+
+/* 7. Typing Text Start */
 .typing-text-wrapper {
     display: flex;
     align-items: center;
@@ -293,4 +311,4 @@ skills {
     }
 }
 
-/* Typing Text */
+/* Typing Text End */
