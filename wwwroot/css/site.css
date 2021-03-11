@@ -1,0 +1,296 @@
+﻿/* Predefined values */
+
+:root {
+    --background-color: #161A1D;
+    --primary-red: #E5383B;
+    --primary-dark-red: #A4161A;
+    --text-color: #D3D3D3;
+    --secondary-background-color: #0B090A;
+    --header-text-color: #B1A7A6;
+}
+
+/* Predefined values End */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.navbar {
+    background-color: #161A1D !important;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: var(--primary-red);
+}
+
+a:hover {
+    color: var(--primary-dark-red);
+}
+
+.btn-primary {
+    color: var(--text-color);
+    background-color: var(--primary-red);
+    border-color: var(--primary-dark-red);
+}
+
+.btn-primary:hover {
+    color: var(--text-color);
+    background-color: var(--primary-dark-red);
+    border-color: var(--primary-red);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: var(--text-color) !important;
+    background-color: var(--primary-red) !important;
+    border-color: var(--primary-dark-red) !important;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 2px solid var(--primary-dark-red) !important;
+}
+
+.border-bottom {
+    border-bottom: 2px solid var(--primary-dark-red) !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem #000000;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Skill Bar */
+
+/* ======= Sections======= */
+.sections-wrapper {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section .section-inner {
+    background: var(--secondary-background-color);
+    padding: 30px;
+}
+
+.section .heading {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--header-text-color);
+    font-size: 24px;
+}
+
+.section .content .more-link{
+    margin-right: 5px;
+    font-size: 14px;
+    position: relative;
+    top: 5px;
+}
+
+skills {
+    display: block;
+}
+
+/* Skills Section */
+.skills .intro {
+    margin-bottom: 30px;
+}
+
+.skills .skillset .item {
+    margin-bottom: 30px;
+}
+
+.skills .skillset .level-title {
+    font-size: 16px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.skills .skillset .level-title .level-label {
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.skills .skillset .level-bar {
+    height: 30px;
+    background: var(--text-color);
+}
+
+.skills .skillset .level-bar-inner {
+    height: 30px;
+    background: var(--primary-red);
+}
+
+.skill-icon {
+    margin-top: 31px;
+    margin-right: 5px;
+}
+
+.expert-text span {
+    font-size: 20px;
+    color: var(--background-color);
+}
+
+.skill-icon-color i {
+    font-size: 20px;
+    color: var(--primary-dark-red);
+}
+
+/* End Skill Bar */
+
+/* GitHub Section */
+
+.github-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.user-info-card {
+    width: 350px;
+    background: var(--secondary-background-color);
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem;
+    box-shadow: 0 10px 20px #000000, 0 6px 6px #000000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.github-card-body {
+    padding: 20px;
+}
+
+.github-card-avatar {
+    padding: 10px;
+}
+
+.github-card-item-info {
+    display: inline-block;
+}
+
+.github-card-row {
+    display: flex;
+}
+
+.items-space-between {
+    justify-content: space-between;
+}
+
+/* Typing Text */
+.typing-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    min-height: 25vh;
+}
+
+.typing-text-wrapper .static-txt {
+    color: var(--text-color);
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.typing-text-wrapper .dynamic-txts {
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-txts li {
+    list-style: none;
+    color: var(--primary-red);
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-txts li span {
+    position: relative;
+    line-height: 90px;
+}
+
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #343F4F;
+    border-left: 2px solid var(--primary-red);
+    animation: typing 3s steps(10) infinite;
+    background: var(--background-color);
+}
+
+@keyframes typing {
+    40%, 60% {
+        left: calc(100% + 30px);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+/* Typing Text */
