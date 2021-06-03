@@ -27,13 +27,13 @@ jobs:
         name: Login to Docker Registry
         uses: docker/login-action@v1
         with:
-          registry: registry.frozensoftgames.com
-          username: ${{ secrets.FSG_REGISTRY_USERNAME }}
-          password: ${{ secrets.FSG_REGISTRY_PASSWORD }}
+          registry: registry.frozensoftsoftware.com
+          username: ${{ secrets.FSS_REGISTRY_USERNAME }}
+          password: ${{ secrets.FSS_REGISTRY_PASSWORD }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: registry.frozensoftgames.com/eirik-landingsside:latest
+          tags: registry.frozensoftsoftware.com/eirik-landingsside:latest
