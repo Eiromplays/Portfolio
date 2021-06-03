@@ -17,7 +17,7 @@ function LoadGitHubUser(user, container) {
 
     const githubProject = document.createElement("div");
     githubProject.id = `${user}-user-info-card`;
-    githubProject.className += "user-info-card";
+    githubProject.className += "user-info-card col-sm-4 col-md-5";
 
     githubContainer.appendChild(githubProject);
 
@@ -163,3 +163,27 @@ function ExpandProjects(name, expandProjectBtn) {
         projects.style.display = "none";
     else projects.style.display = "block";
 }
+
+let options = {
+    startAngle: -1.55,
+    size: 150,
+    value: 0.85,
+    fill: { gradient: ["#E5383B", "#A4161A", "#BA181B"] }
+}
+
+$(".circle .bar").circleProgress(options).on("circle-animation-progress",
+    function (event, progress, stepValue) {
+        $(this).parent().find("span").text(`${String(stepValue.toFixed(2).substr(2))}%`);
+});
+
+$(".csharp .bar").circleProgress({
+    value: 0.50
+});
+
+$(".unity .bar").circleProgress({
+    value: 0.50
+});
+
+$(".aspnet .bar").circleProgress({
+    value: 0.50
+});

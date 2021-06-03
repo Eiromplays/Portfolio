@@ -88,11 +88,15 @@
 
 <!-- School Projects End -->
 <div class="gap"></div>
+
 <!-- GitHub Section Start -->
 <section class="text-center">
     <h1>GitHub Stats:</h1>
 
-    <div class="github-container"></div>
+    <div class="container">
+        <div class="row github-container">
+        </div>
+    </div>
 </section>
 <!-- GitHub Section End -->
 
@@ -109,12 +113,12 @@
         <section>
             <i class="icon fas fa-check"></i>
             <div class="details">
-                <span class="title">Frozensoft Games</span>
+                <span class="title">Frozensoft Software</span>
                 <span>Sunday, 18. November 2018</span>
             </div>
-            <p>My Game Development Studio</p>
+            <p>My IT "company"</p>
             <div class="bottom">
-                <a href="https://frozensoftgames.com">Checkout it out</a>
+                <a href="https://frozensoftsoftware.com">Checkout it out</a>
                 <i>- Personal Project</i>
             </div>
         </section>
@@ -128,25 +132,4 @@
 {
     <script>LoadGitHubUsers(["Eiromplays"]);</script>
     <script src="js/Skillbar.js"></script>
-    <script>
-        let options = {
-            startAngle: -1.55,
-            size: 150,
-            value: 0.85,
-            fill: { gradient: ['#E5383B', '#A4161A', '#BA181B'] }
-        }
-        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
-            function (event, progress, stepValue) {
-                $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
-            });
-        $(".csharp .bar").circleProgress({
-            value: 0.50
-        });
-        $(".unity .bar").circleProgress({
-            value: 0.50
-        });
-        $(".aspnet .bar").circleProgress({
-            value: 0.50
-        });
-    </script>
 }
