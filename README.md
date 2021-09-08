@@ -1,2 +1,2 @@
-# Landingsside
-Official repository for my landing page.
+# Portfolio
+Official repository for my portfolio.
